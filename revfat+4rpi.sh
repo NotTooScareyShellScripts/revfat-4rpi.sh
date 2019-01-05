@@ -11,7 +11,7 @@
 # #>chmod +x revfat+4rpi.sh
 # #>./revfat+4rpi.sh image-name.img myPiBOOT
 #
-#*note full verbosity enabled, removed the "v's" as needed.
+#*note full verbosity enabled for testing, remove the extra "v/V's" when your happy.
 #
 # Requirements: basic linux tools 
 # bash,blkid,fdisk,kpartx,sed
