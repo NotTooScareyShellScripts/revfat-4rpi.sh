@@ -72,7 +72,8 @@ rmdir -v "$MY_DIR"/temp/
 rm -rfv "$MY_DIR"/tmp/
 
 #do some work on rootfs
-
+#todo: identify/count nparts and select proper rootfs part automatically
+#Note for now: change 'NR==3' --> 'NR==2' if you only have two parts,eg raspbian image doesnt use part swaps anymore 
 rootfsloopdev=$(kpartx -avs "$1" | awk 'NR==3 {print $3}')
 echo "$rootfsloopdev"
 
