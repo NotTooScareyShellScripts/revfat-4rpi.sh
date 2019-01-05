@@ -1,12 +1,17 @@
 revfat+4rpi.sh aka raspberrypi-reformat
 ====================
  Script to take an SD card image created by Livemedia-Creator (such as for a
- Raspberry Pi) with an ext4 boot partition and reformat it to vfat and
+ Raspberry Pi) with an ext4 boot partition.
+ 
+ This will reconfigure the boot partition as vfat and 
  it will take a new bootlabel input and apply it to the fstab on the images rootfs.
+ 
  To use this script, provide the image name as
  the first argument and the new 11 char bootlabel for second arg.
- BOTH args $1 and $2 are mandatory in this configuration to ensure maximum likelyhood of sucessful booting 
- Use  Example "./revfat+4rpm.sh image-name.img myPiBOOT"
+ 
+ *BOTH args $1 and $2 are mandatory in this configuration to ensure maximum likelyhood of sucessful booting 
+ 
+      Use  Example "./revfat+4rpm.sh image-name.img myPiBOOT"
 
  Requirements 
  bash (bash)
