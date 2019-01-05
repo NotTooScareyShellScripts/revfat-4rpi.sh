@@ -28,10 +28,10 @@ if [ $(id -u) -ne 0 ]; then
     echo "Root privileges are required for running $0."
     exit 1
 elif [ -z $1 ]; then
-    echo "Usage: $0 [image] [BOOTLABEL]    *(11char max alphaNum BOOTLABEL)
+    echo "Usage: $0 [image] [BOOTLABEL]    *(11char max alphaNum BOOTLABEL)"
     exit 1
 elif [ -z $2 ]; then
-    echo "Usage: $0 [image] [BOOTLABEL]    *(11char max alphaNum BOOTLABEL)
+    echo "Usage: $0 [image] [BOOTLABEL]    *(11char max alphaNum BOOTLABEL)"
     exit 1
 fi
 #todo 11char alphanum validity check 
