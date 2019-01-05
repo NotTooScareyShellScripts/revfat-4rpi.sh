@@ -18,9 +18,8 @@ revfat+4rpi.sh formerly known as : raspberrypi-reformat
      The actual rpi install image you created with livemedia-creator already! 
       
      Also,
-      bash (bash)
-      fdisk (util-linux)
-      kpartx (kpartx)
+      # basic linux tools 
+      # bash,blkid,fdisk,kpartx,sed
 
 Historical Credits:
  
