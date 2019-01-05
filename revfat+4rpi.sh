@@ -50,7 +50,7 @@ cp -rv "$MY_DIR"/temp/* "$MY_DIR"/tmp/boot/
 umount -v "$MY_DIR"/temp/
 
 # format boot parttion to vfat
-mkfs -t vfat -n $2 /dev/mapper/$bootloopdev
+mkfs -V -t vfat -n $2 /dev/mapper/$bootloopdev
 
 # update partition fs info
 echo "t
