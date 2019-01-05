@@ -121,6 +121,7 @@ kpartx -avs "$1"
 sleep 1
 blkid  /dev/mapper/loop0p1
 blkid  /dev/mapper/loop0p2
+#comment next line out, along with the substution for NR as explained above, if you only use 2 partitions in your image creation
 blkid  /dev/mapper/loop0p3
 echo ...
 echo "All done!"
