@@ -37,7 +37,7 @@ elif [ -z $2 ]; then
     echo "Usage: $0 [image] [BOOTLABEL]    *(11char max alphaNum BOOTLABEL)"
     exit 1
 fi
-#todo 11char alphanum validity check 
+#todo: need a "min4 , max11" char alphanum validity check here on the bootlabel before proceeding. 
 
 bootloopdev=$(kpartx -avs "$1" | awk 'NR==1 {print $3}')
 echo "$bootloopdev"
