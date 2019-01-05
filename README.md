@@ -16,14 +16,17 @@ revfat+4rpi.sh formerly known as : raspberrypi-reformat
  Requirements 
  
 The actual rpi install image you created with livemedia-creator already! 
- Also,
- bash (bash)
- fdisk (util-linux)
- kpartx (kpartx)
+       
+     Also,
+      bash (bash)
+      fdisk (util-linux)
+      kpartx (kpartx)
 
- Original revfat Version 1.1 2014-08-27
- Original revfat Authors:
-   Andrew Greene,        Seneca College 2013-04-05
-   Christopher Markieta, Seneca College 2014-08-27
+ 
+    Original revfat Version 1.1 2014-08-27
+    Original revfat Authors:
+     Andrew Greene,        Seneca College 2013-04-05
+      Christopher Markieta, Seneca College 2014-08-27
 
- Version 1.2 revfat+4rpi.sh 2018-01-03 KFlynn
+
+Version 1.2 revfat+4rpi.sh 2018-01-03 KFlynn
