@@ -22,7 +22,8 @@ revfat+4rpi.sh formerly known as : raspberrypi-reformat
      
      * Script Currently setup to expect a 3 partition layer as follows:
             1:/boot 2:swap 3:/rootfs . 
-               If  dont use 3 parts as stated in your lmc project, change the script as needed.
+               If  dont use 3 parts as stated in your lmc project, eg. if you want to use this on raspbian, 
+                  then change the NR== line in script for 'rootfs' to match your layout.
      
       
      Also,
