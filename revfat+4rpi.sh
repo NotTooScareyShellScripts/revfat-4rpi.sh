@@ -8,10 +8,8 @@
 # BOTH args $1 and $2 are mandatory in this configuration to ensure maximum likelyhood of sucessful booting 
 # Use  Example "./revfat+4rpi.sh image-name.img myPiBOOT"
 #
-# Requirements 
-# bash (bash)
-# fdisk (util-linux)
-# kpartx (kpartx)
+# Requirements: basic linux tools 
+# bash,blkid,fdisk,kpartx,sed
 #
 # Version 1.1 2014-08-27
 # Authors:
