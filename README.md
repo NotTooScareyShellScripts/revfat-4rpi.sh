@@ -22,7 +22,7 @@ revfat+4rpi.sh formerly known as : raspberrypi-reformat
       fdisk (util-linux)
       kpartx (kpartx)
 
-Credits:
+Historical Credits:
  
     Original revfat Version 1.1 2014-08-27
     Original revfat Authors:
@@ -30,4 +30,5 @@ Credits:
       Christopher Markieta, Seneca College 2014-08-27
 
 
-Version 1.2 revfat+4rpi.sh 2018-01-03 KFlynn
+
+Recent Version 1.2 revfat+4rpi.sh 2018-01-03 KFlynn
