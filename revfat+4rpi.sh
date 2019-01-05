@@ -6,7 +6,10 @@
 # To use this script, provide the image name as
 # the first argument and the new 11 char bootlabel for second arg.
 # BOTH args $1 and $2 are mandatory in this configuration to ensure maximum likelyhood of sucessful booting 
-# Use  Example "./revfat+4rpi.sh image-name.img myPiBOOT"
+#
+# Use  Example:
+# #>chmod +x revfat+4rpi.sh
+# #>./revfat+4rpi.sh image-name.img myPiBOOT
 #
 #*note full verbosity enabled, removed the "v's" as needed.
 #
