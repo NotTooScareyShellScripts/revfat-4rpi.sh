@@ -14,6 +14,9 @@ revfat+4rpi.sh formerly known as : raspberrypi-reformat
       Use  Example "./revfat+4rpm.sh image-name.img myPiBOOT"
 
  Requirements 
+ 
+The actual rpi install image you created with livemedia-creator already! 
+ Also,
  bash (bash)
  fdisk (util-linux)
  kpartx (kpartx)
