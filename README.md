@@ -11,7 +11,10 @@ revfat+4rpi.sh formerly known as : raspberrypi-reformat
  
  *BOTH args $1 and $2 are mandatory in this configuration to ensure maximum likelyhood of sucessful booting 
  
-      Use  Example "./revfat+4rpm.sh image-name.img myPiBOOT"
+ 
+      Use  Example:
+      #chmod +x .revfat+4rpi.sh
+      #./revfat+4rpi.sh image-name.img myPiBOOT
 
  Requirements 
  
