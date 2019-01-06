@@ -9,7 +9,7 @@ revfat+4rpi.sh formerly known as : raspberrypi-reformat
  To use this script, provide the image name as
  the first argument and the new bootlabel (UPPERCASE 11 char maximum alpha-numeric only) for second arg.
  
- *BOTH args $1 and $2 are mandatory in this configuration to ensure maximum likelyhood of sucessful booting 
+ *BOTH args $1 and $2 are mandatory in this configuration to ensure maximum likelyhood of successful booting 
  
  
       Use  Example:
