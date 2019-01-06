@@ -40,7 +40,7 @@ Historical Credits:
 Recent Version 1.2 revfat+4rpi.sh 2018-01-03 KFlynn
 
 Example Input:
-Needs updating, shows older 3 part method, but still valid for example.
+Needs updating, shows older 3 part method, but still valid for example, minus the swap part.
 
      -bash-4.2# kpartx -avs ./diskSnm4zt.img 
      add map loop0p1 (254:0): 0 1048576 linear /dev/loop0 2048
