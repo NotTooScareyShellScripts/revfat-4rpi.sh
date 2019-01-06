@@ -12,10 +12,12 @@ revfat+4rpi.sh formerly known as : raspberrypi-reformat
  *BOTH args $1 and $2 are mandatory in this configuration to ensure maximum likelyhood of successful booting 
  
  
-      Use  Example:
+ Use  Example:
+      
       #chmod +x .revfat+4rpi.sh
       #./revfat+4rpi.sh image-name.img RPIBOOTPART
 
+ 
  Requirements 
  
      The actual rpi install image you created with livemedia-creator already! 
@@ -39,6 +41,11 @@ Historical Credits:
 
 Recent Version 1.2 revfat+4rpi.sh 2018-01-03 KFlynn
 
+
+
+
+
+
 Example Input:
 
 
@@ -61,7 +68,7 @@ Example Input:
 
 Example Output:  
 
-Needs updating, shows older 3 part method, but still valid for example.
+*Needs updating, shows older 3 part method, but still valid for example.
 
      #chmod  +x revfat+4rpi.sh
      
