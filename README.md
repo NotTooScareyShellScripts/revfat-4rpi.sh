@@ -7,14 +7,14 @@ revfat+4rpi.sh formerly known as : raspberrypi-reformat
  it will take a new bootlabel input and apply it to the fstab on the images rootfs.
  
  To use this script, provide the image name as
- the first argument and the new bootlabel (11 char maximum alpha-numeric only) for second arg.
+ the first argument and the new bootlabel (UPPERCASE 11 char maximum alpha-numeric only) for second arg.
  
  *BOTH args $1 and $2 are mandatory in this configuration to ensure maximum likelyhood of sucessful booting 
  
  
       Use  Example:
       #chmod +x .revfat+4rpi.sh
-      #./revfat+4rpi.sh image-name.img myPiBOOT
+      #./revfat+4rpi.sh image-name.img RPIBOOTPART
 
  Requirements 
  
