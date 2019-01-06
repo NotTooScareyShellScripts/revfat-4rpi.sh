@@ -76,8 +76,8 @@ rm -rfv "$MY_DIR"/tmp/
 
 #do some work on rootfs
 #todo: identify/count nparts and select proper rootfs part automatically
-#Note for now: change 'NR==3' --> 'NR==2' if you only have two parts,eg raspbian image doesnt use part swaps anymore 
-rootfsloopdev=$(kpartx -avs "$1" | awk 'NR==3 {print $3}')
+#using 2 parts for default for now 
+rootfsloopdev=$(kpartx -avs "$1" | awk 'NR==2 {print $3}')
 echo "$rootfsloopdev"
 
 mkdir -pv "$MY_DIR"/tmp/rootfs/
@@ -121,8 +121,6 @@ kpartx -avs "$1"
 sleep 1
 blkid  /dev/mapper/loop0p1
 blkid  /dev/mapper/loop0p2
-#comment next line out, along with the substution for NR as explained above, if you only use 2 partitions in your image creation
-blkid  /dev/mapper/loop0p3
 echo ...
 echo "All done!"
 echo ...
