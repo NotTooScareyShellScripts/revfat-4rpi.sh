@@ -5,7 +5,7 @@
 # it will take a new bootlabel input and apply it to the fstab on the images rootfs.
 # To use this script, provide the image name as
 # the first argument and the new (UPPERCASE 11 char alpahnumeric ONLY) BOOTLABEL for second arg.
-# BOTH args $1 and $2 are mandatory in this configuration to ensure maximum likelyhood of sucessful booting 
+# BOTH args $1 and $2 are mandatory in this configuration to ensure maximum likelyhood of successful booting 
 #
 # Use  Example:
 # #>chmod +x revfat+4rpi.sh
