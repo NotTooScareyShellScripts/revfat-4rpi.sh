@@ -40,7 +40,9 @@ Historical Credits:
 
 Recent Version 1.2 revfat+4rpi.sh 2018-01-03 KFlynn
 
-Example Output:     #chmod  +x revfat+4rpi.sh
+Example Output:  
+
+     #chmod  +x revfat+4rpi.sh
      
      # ./revfat+4rpi.sh diskSnm4zt.img RPIBOOTPART
      ++ dirname ./revfat+4rpi.sh
