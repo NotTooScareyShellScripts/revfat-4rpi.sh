@@ -12,7 +12,7 @@ Script to take an SD card image created by Livemedia-Creator (such as for a
  To use this script, provide the image name as
  the first argument and the new bootlabel (UPPERCASE 11 char maximum alpha-numeric only) for second arg.
  
- *BOTH args $1 and $2 are mandatory in this configuration to ensure maximum likelyhood of successful booting 
+ *BOTH args $1 and $2 are mandatory in this configuration to ensure maximum likelihood of successful booting 
  
  
  Use  Example:
