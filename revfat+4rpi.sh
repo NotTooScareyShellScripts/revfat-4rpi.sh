@@ -4,12 +4,12 @@
 # Raspberry Pi) with an ext4 boot partition and reformat it to vfat and
 # it will take a new bootlabel input and apply it to the fstab on the images rootfs.
 # To use this script, provide the image name as
-# the first argument and the new 11 char bootlabel for second arg.
+# the first argument and the new (UPPERCASE 11 char alpahnumeric ONLY) BOOTLABEL for second arg.
 # BOTH args $1 and $2 are mandatory in this configuration to ensure maximum likelyhood of sucessful booting 
 #
 # Use  Example:
 # #>chmod +x revfat+4rpi.sh
-# #>./revfat+4rpi.sh image-name.img myPiBOOT
+# #>./revfat+4rpi.sh image-name.img RPIBOOTPART
 #
 #*note full verbosity enabled for testing, remove the extra "v/V's" when your happy.
 #
@@ -31,13 +31,13 @@ if [ $(id -u) -ne 0 ]; then
     echo "Root privileges are required for running $0."
     exit 1
 elif [ -z $1 ]; then
-    echo "Usage: $0 [image] [BOOTLABEL]    *(11char max alphaNum BOOTLABEL)"
+    echo "Usage: $0 [image] [BOOTLABEL]    *(Use a 4 char min or a 11 char max UPPERCASE alphaNum Only BOOTLABEL NAME, eg RPIBOOTLABEL or 20190106RPI)"
     exit 1
 elif [ -z $2 ]; then
-    echo "Usage: $0 [image] [BOOTLABEL]    *(11char max alphaNum BOOTLABEL)"
+    echo "Usage: $0 [image] [BOOTLABEL]    *(Use a 4 char min or a 11 char max UPPERCASE alphaNum Only BOOTLABEL NAME, eg RPIBOOTLABEL or 20190106RPI)"
     exit 1
 fi
-#todo: need a "min4 , max11" char alphanum validity check here on the bootlabel before proceeding. 
+#todo: need a "min4 , max11" UPPERCASE char alphanum validity check here on the bootlabel before proceeding. 
 
 bootloopdev=$(kpartx -avs "$1" | awk 'NR==1 {print $3}')
 echo "$bootloopdev"
