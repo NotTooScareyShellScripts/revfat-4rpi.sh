@@ -40,17 +40,15 @@ Historical Credits:
 Recent Version 1.2 revfat+4rpi.sh 2018-01-03 KFlynn
 
 Example Input:
-Needs updating, shows older 3 part method, but still valid for example, minus the swap part.
+
 
      -bash-4.2# kpartx -avs ./diskSnm4zt.img 
      add map loop0p1 (254:0): 0 1048576 linear /dev/loop0 2048
-     add map loop0p2 (254:1): 0 1048576 linear /dev/loop0 1050624
-     add map loop0p3 (254:2): 0 8189952 linear /dev/loop0 2099200
+     add map loop0p2 (254:1): 0 8189952 linear /dev/loop0 2099200
      
      -bash-4.2# blkid /dev/mapper/loop0p*
      /dev/mapper/loop0p1: LABEL="boot" UUID="e9155a49-0495-4ca5-9dcf-78c2c193d12e" TYPE="ext4" 
-     /dev/mapper/loop0p2: LABEL="swap" UUID="c715ec8e-adb7-4a50-b4ca-b80c37d86fab" TYPE="swap" 
-     /dev/mapper/loop0p3: LABEL="rootfs" UUID="8c355f33-3368-43fe-8fd5-eb79ea99f049" TYPE="ext4" 
+     /dev/mapper/loop0p2: LABEL="rootfs" UUID="8c355f33-3368-43fe-8fd5-eb79ea99f049" TYPE="ext4" 
      
          
      *Note the boot part is a ext4 part, which we will be converting to vfat
