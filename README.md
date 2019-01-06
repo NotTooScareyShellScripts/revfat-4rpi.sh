@@ -1,4 +1,4 @@
-revfat+4rpi.sh formerly known as : raspberrypi-reformat and/or revfat
+revfat+4rpi.sh *formerly known as : raspberrypi-reformat and/or revfat
 ====================
  Script to take an SD card image created by Livemedia-Creator (such as for a
  Raspberry Pi) with an ext4 boot partition.
