@@ -23,7 +23,7 @@
 #
 # Version 1.2 revfat+4rpi.sh 2018-01-03 KFlynn
 
-set -e
+set -ex
 
 MY_DIR=$(dirname $0)
 
