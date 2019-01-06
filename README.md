@@ -20,7 +20,7 @@ revfat+4rpi.sh formerly known as : raspberrypi-reformat
  
      The actual rpi install image you created with livemedia-creator already! 
      
-     * Script Currently setup to expect a 3 partition layer as follows:
+     * For input: This Script Currently setup to expect a 2 partition layout as follows:
             1:/boot 2:/rootfs  
                If  dont use 2 parts as stated above, in your lmc project, change as you need.
                eg.  change the NR== line in script for 'rootfs' to match actual rootfs part #, in your layout.
