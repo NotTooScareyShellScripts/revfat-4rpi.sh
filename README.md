@@ -21,12 +21,11 @@ revfat+4rpi.sh formerly known as : raspberrypi-reformat
      The actual rpi install image you created with livemedia-creator already! 
      
      * Script Currently setup to expect a 3 partition layer as follows:
-            1:/boot 2:swap 3:/rootfs . 
-               If  dont use 3 parts as stated in your lmc project, eg. if you want to use this on raspbian, 
-                  then change the NR== line in script for 'rootfs' to match your layout.
-     
-      
-     Also,
+            1:/boot 2:/rootfs  
+               If  dont use 2 parts as stated above, in your lmc project, change as you need.
+               eg.  change the NR== line in script for 'rootfs' to match actual rootfs part #, in your layout.
+           
+     Also needed,
       # basic linux tools 
       # bash,blkid,fdisk,kpartx,sed
 
@@ -41,6 +40,7 @@ Historical Credits:
 Recent Version 1.2 revfat+4rpi.sh 2018-01-03 KFlynn
 
 Example Input:
+Needs updating, shows older 3 part method, but still valid for example.
 
      -bash-4.2# kpartx -avs ./diskSnm4zt.img 
      add map loop0p1 (254:0): 0 1048576 linear /dev/loop0 2048
@@ -62,6 +62,8 @@ Example Input:
 
 
 Example Output:  
+
+Needs updating, shows older 3 part method, but still valid for example.
 
      #chmod  +x revfat+4rpi.sh
      
