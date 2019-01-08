@@ -9,7 +9,7 @@
 #
 # Use  Example:
 # #>chmod +x revfat+4rpi.sh
-# #>./revfat+4rpi.sh image-name.img RPIBOOTPART
+# #>./revfat+4rpi.sh image-name.img BOOTPART
 #
 #*note full verbosity enabled for testing, remove the extra "v/V's" when your happy.
 #
@@ -31,14 +31,14 @@ if [ $(id -u) -ne 0 ]; then
     echo "Root privileges are required for running $0."
     exit 1
 elif [ -z $1 ]; then
-    echo "Usage: $0 [image] [LABEL]    *(Use a 4-8 char max UPPERCASE alphaNum and/or a dash, only for a BOOTLABEL NAME, eg BOOT1234, RPI-BOOT or 2019-0106)"
+    echo "Usage: $0 [image] [LABEL]    *(Use a 4-8 char max UPPERCASE alphaNum and/or a dash, only for a BOOTLABEL NAME, eg BOOT1234, RPI-BOOT or 2019-106)"
     exit 1
 elif [ -z $2 ]; then
-    echo "Usage: $0 [image] [LABEL]    *(Use a 4-8 char max UPPERCASE alphaNum and/or a dash, only for a BOOTLABEL NAME, eg BOOT1234, RPI-BOOT or 2019-0106)"
+    echo "Usage: $0 [image] [LABEL]    *(Use a 4-8 char max UPPERCASE alphaNum and/or a dash, only for a BOOTLABEL NAME, eg BOOT1234, RPI-BOOT or 2019-106)"
     exit 1
 fi
 #todo: Proper input validity check that matches just the needs for input on $2
-#stopgap below only truncates it off at 8 for now. Improper input char usage for [BOOTLABEL] can cause a non boot scenario easily.
+#stopgap below only truncates it off at 8 for now. Improper input char usage for [LABEL] can cause a non boot scenario easily.
 
 bootloopdev=$(kpartx -avs "$1" | awk 'NR==1 {print $3}')
 echo "$bootloopdev"
