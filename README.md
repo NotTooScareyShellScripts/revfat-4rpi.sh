@@ -13,7 +13,7 @@ Script to take an SD card image created by Livemedia-Creator (such as for a
  it will take a new bootlabel input and apply it to the fstab on the images rootfs.
  
  To use this script, provide the image name as
- the first argument and the new bootlabel (UPPERCASE 8 char maximum alpha-numeric, and Dash/hyphon only) for second arg.
+ the first argument and the new bootlabel (UPPERCASE 8 char maximum alpha-numeric, and/or a dash) only for second arg.
  *You dont technically have to use 8 UPPERCASE,ALPHANUM only but you might want to, eg. incase you want to read the vfat part on old windows machine that may not support all labels or even on some other strange old os's too."
  
  *BOTH args $1 and $2 are mandatory in this configuration to ensure maximum likelihood of successful booting 
@@ -22,7 +22,7 @@ Script to take an SD card image created by Livemedia-Creator (such as for a
  Use  Example:
       
       #chmod +x .revfat+4rpi.sh
-      #./revfat+4rpi.sh image-name.img RPIBOOTPART
+      #./revfat+4rpi.sh image-name.img BOOTPART
 
  
  Requirements 
