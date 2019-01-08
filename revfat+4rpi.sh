@@ -4,7 +4,7 @@
 # Raspberry Pi) with an ext4 boot partition and reformat it to vfat and
 # it will take a new bootlabel input and apply it to the fstab on the images rootfs.
 # To use this script, provide the image name as
-# the first argument and the new (UPPERCASE 11 char alpahnumeric ONLY) BOOTLABEL for second arg.
+# the first argument and the new (UPPERCASE 8 char alpahnumeric and/or a dash, ONLY) BOOTLABEL for second arg.
 # BOTH args $1 and $2 are mandatory in this configuration to ensure maximum likelihood of successful booting 
 #
 # Use  Example:
@@ -31,14 +31,14 @@ if [ $(id -u) -ne 0 ]; then
     echo "Root privileges are required for running $0."
     exit 1
 elif [ -z $1 ]; then
-    echo "Usage: $0 [image] [BOOTLABEL]    *(Use a 4 char min or a 11 char max UPPERCASE alphaNum Only BOOTLABEL NAME, eg RPIBOOTLABEL or 20190106RPI)"
+    echo "Usage: $0 [image] [LABEL]    *(Use a 4-8 char max UPPERCASE alphaNum and/or a dash, only for a BOOTLABEL NAME, eg BOOT1234, RPI-BOOT or 2019-0106)"
     exit 1
 elif [ -z $2 ]; then
-    echo "Usage: $0 [image] [BOOTLABEL]    *(Use a 4 char min or a 11 char max UPPERCASE alphaNum Only BOOTLABEL NAME, eg RPIBOOTLABEL or 20190106RPI)"
+    echo "Usage: $0 [image] [LABEL]    *(Use a 4-8 char max UPPERCASE alphaNum and/or a dash, only for a BOOTLABEL NAME, eg BOOT1234, RPI-BOOT or 2019-0106)"
     exit 1
 fi
-#todo: Proper input validity check needed with  "min4 , max11" UPPERCASE char alphanum on the bootlabel before proceeding. 
-#stopgap below only truncates it off at 11 for now.
+#todo: Proper input validity check that matches just the needs for input on $2
+#stopgap below only truncates it off at 8 for now. Improper input char usage for [BOOTLABEL] can cause a non boot scenario easily.
 
 bootloopdev=$(kpartx -avs "$1" | awk 'NR==1 {print $3}')
 echo "$bootloopdev"
@@ -91,7 +91,7 @@ sed -i '\/boot/d' "$MY_DIR"/tmp/rootfs/etc/fstab
 echo "removing old /boot entries if any from fstab"
 
 #Temp stopgap to sanitize label input
-TTRIM=$(echo "$2"|cut -c1-11)
+TTRIM=$(echo "$2"|cut -c1-8)
 #write out a new id to fstab
 echo "LABEL="$TTRIM"          /boot             vfat    defaults,noatime        0 0">>"$MY_DIR"/tmp/rootfs/etc/fstab
 echo ...
