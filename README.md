@@ -72,20 +72,18 @@ Example Input:
 
 
 
-Example Output:  
+Example Output against a file called 'c7rpiMyth.raw.img' with a stupid long label:  
 
-*Needs updating, shows older 3 part method, but still valid for example.
-
-     #chmod  +x revfat+4rpi.sh
+     #chmod +x revfat+4rpi.sh
      
-     # ./revfat+4rpi.sh diskSnm4zt.img RPIBOOTPART
+     #>./revfat+4rpi.sh c7rpiMyth.raw.img 123456789012345678SOMECRAZYLONGWEIRDLABEL
      ++ dirname ./revfat+4rpi.sh
      + MY_DIR=.
      ++ id -u
      + '[' 0 -ne 0 ']'
-     + '[' -z diskSnm4zt.img ']'
-     + '[' -z RPIBOOTPART ']'
-     ++ kpartx -avs diskSnm4zt.img
+     + '[' -z c7rpiMyth.raw.img ']'
+     + '[' -z 123456789012345678SOMECRAZYLONGWEIRDLABEL ']'
+     ++ kpartx -avs c7rpiMyth.raw.img
      ++ awk 'NR==1 {print $3}'
      + bootloopdev=loop0p1
      + echo loop0p1
@@ -96,7 +94,7 @@ Example Output:
      mkdir: created directory ‘./tmp’
      mkdir: created directory ‘./tmp/boot/’
      + mount -o rw /dev/mapper/loop0p1 ./temp/
-     + cp -rv ./temp/bcm2708-rpi-0-w.dtb ./temp/bcm2708-rpi-b.dtb ./temp/bcm2708-rpi-b-plus.dtb ./temp/bcm2708-rpi-cm.dtb ./temp/bcm2709-rpi-2-b.dtb ./temp/bcm2710-rpi-3-b.dtb ./temp/bcm2710-rpi-3-b-plus.dtb ./temp/bcm2710-rpi-cm3.dtb ./temp/bcm2835-rpi-a.dtb ./temp/bcm2835-rpi-a-plus.dtb ./temp/bcm2835-rpi-b.dtb ./temp/bcm2835-rpi-b-plus.dtb ./temp/bcm2835-rpi-b-rev2.dtb ./temp/bcm2835-rpi-zero.dtb ./temp/bcm2835-rpi-zero-w.dtb ./temp/bcm2836-rpi-2-b.dtb ./temp/bcm2837-rpi-3-b.dtb ./temp/bootcode.bin ./temp/cmdline.txt ./temp/COPYING.linux ./temp/extlinux ./temp/fixup_cd.dat ./temp/fixup.dat ./temp/fixup_db.dat ./temp/fixup_x.dat ./temp/grub ./temp/initramfs-4.14.82-v7.9999.amdev.el7.armv7hl.img ./temp/kernel-4.14.82-v7.9999.amdev.el7.img ./temp/kernel7.img ./temp/LICENCE.broadcom ./temp/lost+found ./temp/overlays ./temp/start_cd.elf ./temp/start_db.elf ./temp/start.elf ./temp/start_x.elf ./tmp/boot/
+     + cp -rv ./temp/bcm2708-rpi-0-w.dtb ./temp/bcm2708-rpi-b.dtb ./temp/bcm2708-rpi-b-plus.dtb ./temp/bcm2708-rpi-cm.dtb ./temp/bcm2709-rpi-2-b.dtb ./temp/bcm2710-rpi-3-b.dtb ./temp/bcm2710-rpi-3-b-plus.dtb ./temp/bcm2710-rpi-cm3.dtb ./temp/bcm2835-rpi-a.dtb ./temp/bcm2835-rpi-a-plus.dtb ./temp/bcm2835-rpi-b.dtb ./temp/bcm2835-rpi-b-plus.dtb ./temp/bcm2835-rpi-b-rev2.dtb ./temp/bcm2835-rpi-zero.dtb ./temp/bcm2835-rpi-zero-w.dtb ./temp/bcm2836-rpi-2-b.dtb ./temp/bcm2837-rpi-3-b.dtb ./temp/bootcode.bin ./temp/cmdline.txt ./temp/config.txt ./temp/COPYING.linux ./temp/extlinux ./temp/fixup_cd.dat ./temp/fixup.dat ./temp/fixup_db.dat ./temp/fixup_x.dat ./temp/grub ./temp/initramfs-4.14.82-v7.9999.amdev.el7.armv7hl.img ./temp/kernel-4.14.82-v7.9999.amdev.el7.img ./temp/kernel7.img ./temp/LICENCE.broadcom ./temp/lost+found ./temp/overlays ./temp/start_cd.elf ./temp/start_db.elf ./temp/start.elf ./temp/start_x.elf ./tmp/boot/
      ‘./temp/bcm2708-rpi-0-w.dtb’ -> ‘./tmp/boot/bcm2708-rpi-0-w.dtb’
      ‘./temp/bcm2708-rpi-b.dtb’ -> ‘./tmp/boot/bcm2708-rpi-b.dtb’
      ‘./temp/bcm2708-rpi-b-plus.dtb’ -> ‘./tmp/boot/bcm2708-rpi-b-plus.dtb’
@@ -116,6 +114,7 @@ Example Output:
      ‘./temp/bcm2837-rpi-3-b.dtb’ -> ‘./tmp/boot/bcm2837-rpi-3-b.dtb’
      ‘./temp/bootcode.bin’ -> ‘./tmp/boot/bootcode.bin’
      ‘./temp/cmdline.txt’ -> ‘./tmp/boot/cmdline.txt’
+     ‘./temp/config.txt’ -> ‘./tmp/boot/config.txt’
      ‘./temp/COPYING.linux’ -> ‘./tmp/boot/COPYING.linux’
      ‘./temp/extlinux’ -> ‘./tmp/boot/extlinux’
      ‘./temp/fixup_cd.dat’ -> ‘./tmp/boot/fixup_cd.dat’
@@ -283,10 +282,10 @@ Example Output:
      ‘./temp/start.elf’ -> ‘./tmp/boot/start.elf’
      ‘./temp/start_x.elf’ -> ‘./tmp/boot/start_x.elf’
      + umount -v ./temp/
-     umount: /tmp/DEMO/20180105r2/temp (/dev/mapper/loop0p1) unmounted
-     + mkfs -V -t vfat -n RPIBOOTPART /dev/mapper/loop0p1
+     umount: /tmp/DEMO/temp (/dev/mapper/loop0p1) unmounted
+     + mkfs -V -t vfat -n 123456789012345678SOMECRAZYLONGWEIRDLABEL /dev/mapper/loop0p1
      mkfs from util-linux 2.23.2
-     mkfs.vfat -n RPIBOOTPART /dev/mapper/loop0p1 
+     mkfs.vfat -n 123456789012345678SOMECRAZYLONGWEIRDLABEL /dev/mapper/loop0p1 
      mkfs.fat 3.0.20 (12 Jun 2013)
      unable to get drive geometry, using default 255/63
      + echo 't
@@ -294,20 +293,20 @@ Example Output:
      c
      w
      '
-     + fdisk diskSnm4zt.img
+     + fdisk c7rpiMyth.raw.img
      Welcome to fdisk (util-linux 2.23.2).
      
      Changes will remain in memory only, until you decide to write them.
      Be careful before using the write command.
      
      
-     Command (m for help): Partition number (1-3, default 3): Hex code (type L to list all codes): Changed type of partition 'W95 FAT32 (LBA)' to 'W95 FAT32 (LBA)'
+     Command (m for help): Partition number (1,2, default 2): Hex code (type L to list all codes): Changed type of partition 'W95 FAT32 (LBA)' to 'W95 FAT32 (LBA)'
      
      Command (m for help): The partition table has been altered!
      
      Syncing disks.
      + mount -o rw /dev/mapper/loop0p1 ./temp/
-     + cp -rv ./tmp/boot/bcm2708-rpi-0-w.dtb ./tmp/boot/bcm2708-rpi-b.dtb ./tmp/boot/bcm2708-rpi-b-plus.dtb ./tmp/boot/bcm2708-rpi-cm.dtb ./tmp/boot/bcm2709-rpi-2-b.dtb ./tmp/boot/bcm2710-rpi-3-b.dtb ./tmp/boot/bcm2710-rpi-3-b-plus.dtb ./tmp/boot/bcm2710-rpi-cm3.dtb ./tmp/boot/bcm2835-rpi-a.dtb ./tmp/boot/bcm2835-rpi-a-plus.dtb ./tmp/boot/bcm2835-rpi-b.dtb ./tmp/boot/bcm2835-rpi-b-plus.dtb ./tmp/boot/bcm2835-rpi-b-rev2.dtb ./tmp/boot/bcm2835-rpi-zero.dtb ./tmp/boot/bcm2835-rpi-zero-w.dtb ./tmp/boot/bcm2836-rpi-2-b.dtb ./tmp/boot/bcm2837-rpi-3-b.dtb ./tmp/boot/bootcode.bin ./tmp/boot/cmdline.txt ./tmp/boot/COPYING.linux ./tmp/boot/extlinux ./tmp/boot/fixup_cd.dat ./tmp/boot/fixup.dat ./tmp/boot/fixup_db.dat ./tmp/boot/fixup_x.dat ./tmp/boot/grub ./tmp/boot/initramfs-4.14.82-v7.9999.amdev.el7.armv7hl.img ./tmp/boot/kernel-4.14.82-v7.9999.amdev.el7.img ./tmp/boot/kernel7.img ./tmp/boot/LICENCE.broadcom ./tmp/boot/lost+found ./tmp/boot/overlays ./tmp/boot/start_cd.elf ./tmp/boot/start_db.elf ./tmp/boot/start.elf ./tmp/boot/start_x.elf ./temp/
+     + cp -rv ./tmp/boot/bcm2708-rpi-0-w.dtb ./tmp/boot/bcm2708-rpi-b.dtb ./tmp/boot/bcm2708-rpi-b-plus.dtb ./tmp/boot/bcm2708-rpi-cm.dtb ./tmp/boot/bcm2709-rpi-2-b.dtb ./tmp/boot/bcm2710-rpi-3-b.dtb ./tmp/boot/bcm2710-rpi-3-b-plus.dtb ./tmp/boot/bcm2710-rpi-cm3.dtb ./tmp/boot/bcm2835-rpi-a.dtb ./tmp/boot/bcm2835-rpi-a-plus.dtb ./tmp/boot/bcm2835-rpi-b.dtb ./tmp/boot/bcm2835-rpi-b-plus.dtb ./tmp/boot/bcm2835-rpi-b-rev2.dtb ./tmp/boot/bcm2835-rpi-zero.dtb ./tmp/boot/bcm2835-rpi-zero-w.dtb ./tmp/boot/bcm2836-rpi-2-b.dtb ./tmp/boot/bcm2837-rpi-3-b.dtb ./tmp/boot/bootcode.bin ./tmp/boot/cmdline.txt ./tmp/boot/config.txt ./tmp/boot/COPYING.linux ./tmp/boot/extlinux ./tmp/boot/fixup_cd.dat ./tmp/boot/fixup.dat ./tmp/boot/fixup_db.dat ./tmp/boot/fixup_x.dat ./tmp/boot/grub ./tmp/boot/initramfs-4.14.82-v7.9999.amdev.el7.armv7hl.img ./tmp/boot/kernel-4.14.82-v7.9999.amdev.el7.img ./tmp/boot/kernel7.img ./tmp/boot/LICENCE.broadcom ./tmp/boot/lost+found ./tmp/boot/overlays ./tmp/boot/start_cd.elf ./tmp/boot/start_db.elf ./tmp/boot/start.elf ./tmp/boot/start_x.elf ./temp/
      ‘./tmp/boot/bcm2708-rpi-0-w.dtb’ -> ‘./temp/bcm2708-rpi-0-w.dtb’
      ‘./tmp/boot/bcm2708-rpi-b.dtb’ -> ‘./temp/bcm2708-rpi-b.dtb’
      ‘./tmp/boot/bcm2708-rpi-b-plus.dtb’ -> ‘./temp/bcm2708-rpi-b-plus.dtb’
@@ -327,6 +326,7 @@ Example Output:
      ‘./tmp/boot/bcm2837-rpi-3-b.dtb’ -> ‘./temp/bcm2837-rpi-3-b.dtb’
      ‘./tmp/boot/bootcode.bin’ -> ‘./temp/bootcode.bin’
      ‘./tmp/boot/cmdline.txt’ -> ‘./temp/cmdline.txt’
+     ‘./tmp/boot/config.txt’ -> ‘./temp/config.txt’
      ‘./tmp/boot/COPYING.linux’ -> ‘./temp/COPYING.linux’
      ‘./tmp/boot/extlinux’ -> ‘./temp/extlinux’
      ‘./tmp/boot/fixup_cd.dat’ -> ‘./temp/fixup_cd.dat’
@@ -494,8 +494,7 @@ Example Output:
      ‘./tmp/boot/start.elf’ -> ‘./temp/start.elf’
      ‘./tmp/boot/start_x.elf’ -> ‘./temp/start_x.elf’
      + umount ./temp/
-     + kpartx -dv diskSnm4zt.img
-     del devmap : loop0p3
+     + kpartx -dv c7rpiMyth.raw.img
      del devmap : loop0p2
      del devmap : loop0p1
      loop deleted : /dev/loop0
@@ -668,6 +667,7 @@ Example Output:
      removed ‘./tmp/boot/fixup_cd.dat’
      removed directory: ‘./tmp/boot/extlinux’
      removed ‘./tmp/boot/COPYING.linux’
+     removed ‘./tmp/boot/config.txt’
      removed ‘./tmp/boot/cmdline.txt’
      removed ‘./tmp/boot/bootcode.bin’
      removed ‘./tmp/boot/bcm2837-rpi-3-b.dtb’
@@ -689,23 +689,26 @@ Example Output:
      removed ‘./tmp/boot/bcm2708-rpi-0-w.dtb’
      removed directory: ‘./tmp/boot’
      removed directory: ‘./tmp/’
-     ++ kpartx -avs diskSnm4zt.img
-     ++ awk 'NR==3 {print $3}'
-     + rootfsloopdev=loop0p3
-     + echo loop0p3
-     loop0p3
+     ++ kpartx -avs c7rpiMyth.raw.img
+     ++ awk 'NR==2 {print $3}'
+     + rootfsloopdev=loop0p2
+     + echo loop0p2
+     loop0p2
      + mkdir -pv ./tmp/rootfs/
      mkdir: created directory ‘./tmp’
      mkdir: created directory ‘./tmp/rootfs/’
-     + mount -o rw /dev/mapper/loop0p3 ./tmp/rootfs/
+     + mount -o rw /dev/mapper/loop0p2 ./tmp/rootfs/
      + sed -i '\/boot/d' ./tmp/rootfs/etc/fstab
      + echo 'removing old /boot entries if any from fstab'
      removing old /boot entries if any from fstab
-     + echo 'LABEL=RPIBOOTPART          /boot		vfat	defaults,noatime	0 0'
+     ++ echo 123456789012345678SOMECRAZYLONGWEIRDLABEL
+     ++ cut -c1-11
+     + TTRIM=12345678901
+     + echo 'LABEL=12345678901          /boot             vfat    defaults,noatime        0 0'
      + echo ...
      ...
-     + echo 'Using RPIBOOTPART as bootlabel name for image rootfs /etc/fstab'
-     Using RPIBOOTPART as bootlabel name for image rootfs /etc/fstab
+     + echo 'Using 12345678901 as bootlabel name for image rootfs /etc/fstab'
+     Using 12345678901 as bootlabel name for image rootfs /etc/fstab
      + echo ...
      ...
      + sleep 3
@@ -721,14 +724,13 @@ Example Output:
      
      #
      # /etc/fstab
-     # Created by anaconda on Sun Jan  6 04:49:56 2019
+     # Created by anaconda on Tue Jan  8 00:45:15 2019
      #
      # Accessible filesystems, by reference, are maintained under '/dev/disk'
      # See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
      #
-     UUID=8c355f33-3368-43fe-8fd5-eb79ea99f049 /                       ext4    defaults        1 1
-     UUID=c715ec8e-adb7-4a50-b4ca-b80c37d86fab swap                    swap    defaults        0 0
-     LABEL=RPIBOOTPART          /boot		vfat	defaults,noatime	0 0
+     UUID=70a778e2-fcbe-4782-974f-1ad400ebc37b /                       ext4    defaults        1 1
+     LABEL=12345678901          /boot             vfat    defaults,noatime        0 0
      + sleep 3
      + echo ...
      ...
@@ -737,10 +739,9 @@ Example Output:
      + echo ...
      ...
      + umount -v ./tmp/rootfs
-     umount: /tmp/DEMO/20180105r2/tmp/rootfs (/dev/mapper/loop0p3) unmounted
+     umount: /tmp/DEMO/tmp/rootfs (/dev/mapper/loop0p2) unmounted
      + sleep 1
-     + kpartx -dv diskSnm4zt.img
-     del devmap : loop0p3
+     + kpartx -dv c7rpiMyth.raw.img
      del devmap : loop0p2
      del devmap : loop0p1
      loop deleted : /dev/loop0
@@ -753,17 +754,14 @@ Example Output:
      Showing our resultant device mapper blkid output
      + echo ...
      ...
-     + kpartx -avs diskSnm4zt.img
-     add map loop0p1 (253:0): 0 1048576 linear /dev/loop0 2048
-     add map loop0p2 (253:1): 0 1048576 linear /dev/loop0 1050624
-     add map loop0p3 (253:2): 0 8189952 linear /dev/loop0 2099200
+     + kpartx -avs c7rpiMyth.raw.img
+     add map loop0p1 (252:0): 0 524288 linear /dev/loop0 2048
+     add map loop0p2 (252:1): 0 7700480 linear /dev/loop0 526336
      + sleep 1
      + blkid /dev/mapper/loop0p1
-     /dev/mapper/loop0p1: SEC_TYPE="msdos" LABEL="RPIBOOTPART" UUID="8115-F922" TYPE="vfat" 
+     /dev/mapper/loop0p1: SEC_TYPE="msdos" LABEL="12345678901" UUID="5A60-2745" TYPE="vfat" 
      + blkid /dev/mapper/loop0p2
-     /dev/mapper/loop0p2: LABEL="swap" UUID="c715ec8e-adb7-4a50-b4ca-b80c37d86fab" TYPE="swap" 
-     + blkid /dev/mapper/loop0p3
-     /dev/mapper/loop0p3: LABEL="rootfs" UUID="8c355f33-3368-43fe-8fd5-eb79ea99f049" TYPE="ext4" 
+     /dev/mapper/loop0p2: LABEL="rootfs" UUID="70a778e2-fcbe-4782-974f-1ad400ebc37b" TYPE="ext4" 
      + echo ...
      ...
      + echo 'All done!'
@@ -771,12 +769,12 @@ Example Output:
      + echo ...
      ...
      + sleep 1
-     + kpartx -dv diskSnm4zt.img
-     del devmap : loop0p3
+     + kpartx -dv c7rpiMyth.raw.img
      del devmap : loop0p2
      del devmap : loop0p1
      loop deleted : /dev/loop0
      + exit 0
+
 
 
 
