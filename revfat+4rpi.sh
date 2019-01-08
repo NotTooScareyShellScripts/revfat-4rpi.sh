@@ -37,7 +37,8 @@ elif [ -z $2 ]; then
     echo "Usage: $0 [image] [BOOTLABEL]    *(Use a 4 char min or a 11 char max UPPERCASE alphaNum Only BOOTLABEL NAME, eg RPIBOOTLABEL or 20190106RPI)"
     exit 1
 fi
-#todo: need a "min4 , max11" UPPERCASE char alphanum validity check here on the bootlabel before proceeding. 
+#todo: Proper input validity check needed with  "min4 , max11" UPPERCASE char alphanum on the bootlabel before proceeding. 
+#stopgap below only truncates it off at 11 for now.
 
 bootloopdev=$(kpartx -avs "$1" | awk 'NR==1 {print $3}')
 echo "$bootloopdev"
@@ -89,12 +90,14 @@ mount -o rw /dev/mapper/$rootfsloopdev "$MY_DIR"/tmp/rootfs/
 sed -i '\/boot/d' "$MY_DIR"/tmp/rootfs/etc/fstab
 echo "removing old /boot entries if any from fstab"
 
-
+#Temp stopgap to sanitize label input
+TTRIM=$(echo "$2"|cut -c1-11)
 #write out a new id to fstab
-echo "LABEL="$2"          /boot		vfat	defaults,noatime	0 0">>"$MY_DIR"/tmp/rootfs/etc/fstab
+echo "LABEL="$TTRIM"          /boot             vfat    defaults,noatime        0 0">>"$MY_DIR"/tmp/rootfs/etc/fstab
 echo ...
-echo "Using "$2" as bootlabel name for image rootfs /etc/fstab"
+echo "Using "$TTRIM" as bootlabel name for image rootfs /etc/fstab"
 echo ...
+
 #write out whatever else changes needed for rootfs here as needed
 #
 sleep 3
