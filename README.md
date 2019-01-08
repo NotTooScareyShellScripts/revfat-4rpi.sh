@@ -2,7 +2,7 @@ revfat+4rpi.sh
 ====================
    *formerly known as : raspberrypi-reformat and/or revfat
    
-I resurrected revfat from pidora from the its deep sleepy shell bit rot death, for my own project here:
+I resurrected revfat from pidora from its deep sleepy shell bit rot death, for my own project here:
 https://sourceforge.net/projects/c7rpimyth/
 *I'll put the source's here on git later after it stablizes, for now the rpms/srpms are on SF.
 
