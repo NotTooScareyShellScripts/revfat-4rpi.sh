@@ -4,7 +4,7 @@ revfat+4rpi.sh
    
 I resurrected revfat from pidora from its deep sleepy shell bit rot death, for my own project here:
 https://sourceforge.net/projects/c7rpimyth/
-*I'll put the source's here on git later after it stablizes, for now the rpms/srpms are on SF.
+*For the c7rpimyth project;I'll put the source's here git later after it stablizes, for now the rpms/srpms are on SF.
 
 Script to take an SD card image created by Livemedia-Creator (such as for a
  Raspberry Pi) with an ext4 boot partition.
