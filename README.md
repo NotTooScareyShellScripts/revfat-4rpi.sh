@@ -276,7 +276,7 @@ mkdir: created directory ‘./tmp/boot/’
 ‘./temp/start.elf’ -> ‘./tmp/boot/start.elf’
 ‘./temp/start_x.elf’ -> ‘./tmp/boot/start_x.elf’
 + umount -v ./temp/
-umount: /home/mythtv/CENTOS/CUSTOM_RELEASES/20190108r1/temp (/dev/mapper/loop0p1) unmounted
+umount: ./temp (/dev/mapper/loop0p1) unmounted
 + mkfs -V -t vfat -n AEIO-U12 /dev/mapper/loop0p1
 mkfs from util-linux 2.23.2
 mkfs.vfat -n AEIO-U12 /dev/mapper/loop0p1 
