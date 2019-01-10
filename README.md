@@ -733,7 +733,7 @@ LABEL=AEIO-U12          /boot             vfat    defaults,noatime        0 0
 + echo ...
 ...
 + umount -v ./tmp/rootfs
-umount: /home/mythtv/CENTOS/CUSTOM_RELEASES/20190108r1/tmp/rootfs (/dev/mapper/loop0p2) unmounted
+umount: ./tmp/rootfs (/dev/mapper/loop0p2) unmounted
 + sleep 1
 + kpartx -dv c7rpiMyth.raw.img
 del devmap : loop0p2
