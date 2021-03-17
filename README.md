@@ -2,12 +2,7 @@ revfat+4rpi.sh
 ====================
    *formerly known as : raspberrypi-reformat and/or revfat
    
-I resurrected revfat from its deep sleepy shell bit rot death, for my own project here:
-https://github.com/kelsieflynn/c7rpimyth
-
-and 
-
-https://sourceforge.net/projects/c7rpimyth/
+I resurrected revfat from its deep sleepy shell bit rot death, for my another project.
 
 
 Script to take an SD card image created by Livemedia-Creator (such as for a
